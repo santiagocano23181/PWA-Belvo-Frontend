@@ -22,7 +22,7 @@ const ListTransaction = () => {
             clearData();
             if (loading) return;
             try {
-                console.log(axios.defaults.baseURL)
+                console.log(import.meta.env.VITE_APP_SERVER)
                 setLoading(true);
                 const resTransaction = await axios.get(
                     `${import.meta.env.VITE_APP_SERVER}/api/v1/transactions/${linkId}/${accountId}`,
