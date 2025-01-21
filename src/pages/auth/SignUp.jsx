@@ -30,6 +30,7 @@ const SignUp = () => {
 
         try {
             // Get user session
+            console.log(import.meta.env.VITE_APP_SERVER)
             const res = await axios.post(`${import.meta.env.VITE_APP_SERVER}/api/v1/auth/`, {
                 email: email,
                 password: password,

@@ -15,7 +15,7 @@ const SignIn = () => {
     useEffect(() => {
         if (validateSession()) {
             // Send to competitions
-            navigate("/banks");
+            navigate("/banks/list");
         } else {
             // Delete session data
             sessionStorage.removeItem("session");
@@ -31,6 +31,7 @@ const SignIn = () => {
 
         try {
             // Get user session
+            console.log(import.meta.env.VITE_APP_SERVER)
             let res = await axios.post(`${import.meta.env.VITE_APP_SERVER}/api/v1/auth/login`, {
                 email: email,
                 password: password,
