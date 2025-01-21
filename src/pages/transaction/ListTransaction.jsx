@@ -22,7 +22,6 @@ const ListTransaction = () => {
             clearData();
             if (loading) return;
             try {
-                console.log(import.meta.env.VITE_APP_SERVER)
                 setLoading(true);
                 const resTransaction = await axios.get(
                     `${import.meta.env.VITE_APP_SERVER}/api/v1/transactions/${linkId}/${accountId}`,
@@ -34,9 +33,7 @@ const ListTransaction = () => {
                     }
                 );
                 setTransaction(resTransaction.data);
-                console.log(resTransaction.data);
             } catch (error) {
-                console.log(error);
                 // Error handler
                 if (
                     !error.response ||

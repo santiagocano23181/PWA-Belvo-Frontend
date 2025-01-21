@@ -39,9 +39,7 @@ const ListAccount = () => {
                 setNext(resAccount.data.next);
                 setPrevious(resAccount.data.previous);
                 setAccount(resAccount.data.results);
-                console.log(resAccount.data);
             } catch (error) {
-                console.log(error);
                 // Error handler
                 if (
                     !error.response ||

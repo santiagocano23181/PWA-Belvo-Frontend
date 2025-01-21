@@ -25,7 +25,6 @@ const BankList = () => {
             clearData();
             if (loading) return;
             try {
-                console.log(axios.defaults.baseURL)
                 setLoading(true);
                 const resBank = await axios.get(`${import.meta.env.VITE_APP_SERVER}/api/v1/banks?page=${page}`, {
                     headers: {
@@ -37,7 +36,6 @@ const BankList = () => {
                 setPrevious(resBank.data.previous);
                 setBank(resBank.data.results);
             } catch (error) {
-                console.log(error);
                 // Error handler
                 if (
                     !error.response ||
@@ -84,7 +82,6 @@ const BankList = () => {
             setPrevious(resBank.data.previous);
             setBank(resBank.data.results);
         } catch (error) {
-            console.log(error);
             // Error handler
             if (
                 !error.response ||
