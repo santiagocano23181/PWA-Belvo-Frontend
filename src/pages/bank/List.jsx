@@ -25,6 +25,7 @@ const BankList = () => {
             clearData();
             if (loading) return;
             try {
+                console.log(axios.defaults.baseURL)
                 setLoading(true);
                 const resBank = await axios.get(`/api/v1/banks?page=${page}`, {
                     headers: {
