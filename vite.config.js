@@ -6,7 +6,16 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
     server: {
         proxy: {
-            "/api": "https://pwa-belvo-backend.onrender.com", // Aquí usa la URL HTTPS de tu backend
+            "/api": {
+                target: "https://pwa-belvo-backend.onrender.com",
+                changeOrigin: true,
+                secure: true,
+                cookieDomainRewrite: "localhost",
+                // Si es necesario permitir credenciales
+                headers: {
+                    "Access-Control-Allow-Credentials": "true",
+                },
+            },
         },
     },
     plugins: [

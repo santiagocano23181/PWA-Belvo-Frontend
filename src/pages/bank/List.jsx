@@ -29,10 +29,9 @@ const BankList = () => {
                 setLoading(true);
                 const resBank = await axios.get(`${axios.defaults.baseURL}/api/v1/banks?page=${page}`, {
                     headers: {
-                        Authorization: id,
+                        Authorization: `Bearer ${id}`,
                         Accept: "application/json",
                     },
-                    withCredentials: true,
                 });
                 setNext(resBank.data.next);
                 setPrevious(resBank.data.previous);

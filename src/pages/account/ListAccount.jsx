@@ -31,10 +31,9 @@ const ListAccount = () => {
                     `${axios.defaults.baseURL}/api/v1/accounts/${bankName}?page=${page}`,
                     {
                         headers: {
-                            Authorization: id,
+                            Authorization: `Bearer ${id}`,
                             Accept: "application/json",
                         },
-                        withCredentials: true,
                     }
                 );
                 setNext(resAccount.data.next);

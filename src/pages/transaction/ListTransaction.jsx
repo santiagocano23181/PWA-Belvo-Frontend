@@ -28,10 +28,9 @@ const ListTransaction = () => {
                     `${axios.defaults.baseURL}/api/v1/transactions/${linkId}/${accountId}`,
                     {
                         headers: {
-                            Authorization: id,
+                            Authorization: `Bearer ${id}`,
                             Accept: "application/json",
                         },
-                        withCredentials: true,
                     }
                 );
                 setTransaction(resTransaction.data);
