@@ -22,6 +22,7 @@ const ListTransaction = () => {
             clearData();
             if (loading) return;
             try {
+                console.log(axios.defaults.baseURL)
                 setLoading(true);
                 const resTransaction = await axios.get(
                     `/api/v1/transactions/${linkId}/${accountId}`,
