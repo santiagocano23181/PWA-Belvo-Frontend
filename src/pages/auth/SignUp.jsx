@@ -30,7 +30,7 @@ const SignUp = () => {
 
         try {
             // Get user session
-            const res = await axios.post(`${axios.defaults.baseURL}/api/v1/auth/`, {
+            const res = await axios.post(`${import.meta.env.VITE_APP_SERVER}/api/v1/auth/`, {
                 email: email,
                 password: password,
             });

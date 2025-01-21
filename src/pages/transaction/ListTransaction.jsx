@@ -25,7 +25,7 @@ const ListTransaction = () => {
                 console.log(axios.defaults.baseURL)
                 setLoading(true);
                 const resTransaction = await axios.get(
-                    `${axios.defaults.baseURL}/api/v1/transactions/${linkId}/${accountId}`,
+                    `${import.meta.env.VITE_APP_SERVER}/api/v1/transactions/${linkId}/${accountId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${id}`,

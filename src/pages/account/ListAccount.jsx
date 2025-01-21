@@ -28,7 +28,7 @@ const ListAccount = () => {
             try {
                 setLoading(true);
                 const resAccount = await axios.get(
-                    `${axios.defaults.baseURL}/api/v1/accounts/${bankName}?page=${page}`,
+                    `${import.meta.env.VITE_APP_SERVER}/api/v1/accounts/${bankName}?page=${page}`,
                     {
                         headers: {
                             Authorization: `Bearer ${id}`,
