@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import logo from "/pwa-512x512.png";
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { validateSession } from "../helpers/Session";
 import axios from "axios";
 
 const NavbarPersonal = () => {
     const [nav, setNav] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation()
     useEffect(() => {
         // Validate session
         const session = validateSession();
-        if (!session) {
-            //navigate("/auth/sign-in");
+        if (!session && !location.pathname.includes('sign-up') ) {
+            navigate("/auth/sign-in");
         }
 
         return () => axios.CancelToken.source().cancel();
