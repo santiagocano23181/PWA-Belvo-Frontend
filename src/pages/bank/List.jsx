@@ -27,7 +27,7 @@ const BankList = () => {
             try {
                 console.log(axios.defaults.baseURL)
                 setLoading(true);
-                const resBank = await axios.get(`/api/v1/banks?page=${page}`, {
+                const resBank = await axios.get(`${axios.defaults.baseURL}/api/v1/banks?page=${page}`, {
                     headers: {
                         Authorization: id,
                         Accept: "application/json",

@@ -28,7 +28,7 @@ const ListAccount = () => {
             try {
                 setLoading(true);
                 const resAccount = await axios.get(
-                    `/api/v1/accounts/${bankName}?page=${page}`,
+                    `${axios.defaults.baseURL}/api/v1/accounts/${bankName}?page=${page}`,
                     {
                         headers: {
                             Authorization: id,

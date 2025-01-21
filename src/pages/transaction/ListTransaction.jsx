@@ -25,7 +25,7 @@ const ListTransaction = () => {
                 console.log(axios.defaults.baseURL)
                 setLoading(true);
                 const resTransaction = await axios.get(
-                    `/api/v1/transactions/${linkId}/${accountId}`,
+                    `${axios.defaults.baseURL}/api/v1/transactions/${linkId}/${accountId}`,
                     {
                         headers: {
                             Authorization: id,

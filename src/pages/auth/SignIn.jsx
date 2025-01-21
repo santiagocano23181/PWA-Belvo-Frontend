@@ -31,7 +31,7 @@ const SignIn = () => {
 
         try {
             // Get user session
-            let res = await axios.post("/api/v1/auth/login", {
+            let res = await axios.post(`${axios.defaults.baseURL}/api/v1/auth/login`, {
                 email: email,
                 password: password,
             });
