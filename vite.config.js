@@ -27,7 +27,7 @@ export default defineConfig({
                 lang: "es-ES",
                 name: "Vite + React PWA",
                 short_name: "Ejemplo PWA",
-                description: "Ejemplo de PWA creada en Socratech",
+                description: "Ejemplo de PWA",
                 theme_color: "#19223c",
                 background_color: "#d4d4d4",
                 icons: [
